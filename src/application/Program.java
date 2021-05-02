@@ -35,13 +35,14 @@ public class Program {
 		System.out.println("Inserted! New Seller "+newSeller.getId());
 		
 		System.out.println("----TEST 5 -> Update----");
-		seller = sellerDao.findById(8);
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Type the Id for Update: ");
+		seller = sellerDao.findById(sc.nextInt());
 		seller.setName("Martha Waine");
 		sellerDao.update(seller);
 		System.out.println("Update completed!\n"+seller);
 		
 		System.out.println("----TEST 6 -> Delete----");
-		Scanner sc = new Scanner(System.in);
 		System.out.print("Type the Id for deletion: ");
 		int id = sc.nextInt();
 		sellerDao.deleteById(id);
